@@ -1,0 +1,70 @@
+.listHeader {display:table;width:100%;height:500px;margin-bottom:80px; background-size:cover ;background-position:50% 0;}
+.listHeader > div{display:table-cell;height:500px;vertical-align:middle;text-align:center;}
+.listHeader > div > em{  color: #fff;font-size: 42px; font-weight:700; letter-spacing:1px;}
+.listHeader > div > p{margin-top:12px;font-size: 18px; line-height:34px;color: #fff; }
+.listHeader > div > p > span{display:block; }
+
+.searchFormTypeA {position:relative; padding:26px; margin-bottom:20px; background:#f8f8f8; text-align:center;}
+.searchFormTypeA select {display:inline-block; width:auto; height:40px; margin-right:10px; border:1px solid #ccc; background:#fff; vertical-align:middle;}
+.searchFormTypeA input[type=text] {display:inline-block; height:40px; border:1px solid #ccc; vertical-align:middle; font-size:16px;}
+.searchFormTypeA a {display:inline-block; width:114px; height:40px; margin-left:25px; border:1px solid #000; background:#000; color:#fff; text-align:center; font-size:16px; line-height:38px; vertical-align:middle;}
+
+.listTypeA {width:100%; border-top: 1px solid #000;}
+.listTypeA > thead > tr > th {padding: 15px 0; border-bottom: 1px solid #e7e7e7; font-weight:400; color:#8f8f8f;}
+.listTypeA > tbody > tr > td .noticeTit {display:inline-block; height:18px; padding:0 5px; background:#fe4d2c; line-height:18px; font-size:11px; color:#fff;}
+.listTypeA > tbody > tr > td {padding: 15px 0; font-size: 14px; color: #333; border-bottom: 1px solid #e7e7e7; text-align:center; background:#f7f7f7;}
+.listTypeA > tbody > tr > td b {font-weight:700;}
+.listTypeA > tbody > tr > th {background: #f9f9f9; border-bottom: 1px solid #e7e7e7; padding: 10px 16px; color:#777; font-weight:normal;}
+
+.listTypeB {margin-top:20px;}
+.listTypeB ul {margin:0; padding:0;}
+.listTypeB ul:after {content:""; display:block; clear: both;}
+.listTypeB ul li {float:left; margin:115px 20px 0 0; width:380px; height:340px; text-align:center; overflow:hidden;}
+.listTypeB ul li:nth-child(1),
+.listTypeB ul li:nth-child(2),
+.listTypeB ul li:nth-child(3){margin-top:0;}
+.listTypeB ul li:nth-child(3n) {margin-right:0;}
+.listTypeB ul li a {display:block;}
+.listTypeB ul li .thum {display:block;}
+.listTypeB ul li img {width:100%;}
+.listTypeB ul li .txtArea {display:block; margin-top:30px; font-size:20px; color:#000; font-weight:bold;}
+
+.paging {padding:50px 0 0; text-align:center;}
+.paging a,
+.paging b {display:inline-block; margin:0 5px;  height:20px; width:20px; font-size:14px; color:#1e1e1e; text-align: center; vertical-align:top;}
+.paging b {text-decoration:underline;}
+
+
+.detailArea {width:980px; padding:90px 0 0 0; margin:0 auto;}
+.detailArea h2 {padding-bottom:90px; font-size:42px; color:#000; text-align:center; font-weight:700;}
+.detailArea .viewTit {padding-bottom:20px; font-size:32px; color:#000; font-weight: bold; border-bottom:1px solid #000;}
+.detailArea .viewTit span {display:block; padding-bottom:5px; font-size:16px; color:#8f8f8f; font-weight: normal; line-height:24px;}
+.detailArea .cont {padding:85px 0 60px 0;}
+.detailArea .viewCont .btnArea {padding-top:30px; border-top:1px solid #ddd; text-align:right;}
+.detailArea .viewCont .btnArea a {display:inline-block; width:120px; height:40px; font-size:14px; color:#000; text-align:center;  line-height:40px; border:1px solid #000;}
+
+.relatedProductArea .tit {margin-top:25px;font-size:36px;line-height:45px;color:#000;font-family: 'HelveticaNeue-Bold';}
+.relatedProductArea .relatedProduct {position:relative;}
+.relatedProductArea .relatedProduct>a {display:inline-block; position:absolute; left:0; top:0; width:120px; height:120px;}
+.relatedProductArea .relatedProduct>a img {width:100%;}
+.relatedProductArea .relatedProduct .relatedProductTxt {padding:35px 0 45px 150px; font-size:16px; color:#333; line-height:24px;}
+.relatedProductArea .relatedProduct .relatedProductTxt .price {display:block;}
+
+.commentArea {margin-top:60px;}
+.commentArea .commentTit {padding-bottom:10px; margin-bottom:20px; font-size:16px; color:#333; border-bottom:1px solid #000;}
+.commentArea .commentCont {margin-top:10px;}
+.commentArea .commentCont ul li {position:relative; padding:20px 0; border-top:1px solid #e7e7e7}
+.commentArea .commentCont ul li strong {display:inline-block; width:80px; font-size:13px; color:#444;}
+.commentArea .commentCont ul li.reple strong img {margin-right:10px; }
+.commentArea .commentCont ul li div {display:inline-block; font-size:13px; color:#444;}
+.commentArea .commentCont ul li div .date {margin-left:10px; font-size:12px; color:#a1a1a1;}
+.commentArea .commentCont ul li .commentBtn {position:absolute; right:10px; top:22px;}
+
+.commentArea .commentTxtArea {position:relative;}
+.commentArea .commentTxtArea input[type="checkbox"] {width:14px; height:14px; vertical-align:middle;}
+.commentArea .commentTxtArea label {font-size:14px; color:#333;  vertical-align:middle;}
+.commentArea .commentTxtArea textarea {display:block; margin-top:5px; padding:10px; width:1040px; height:80px;}
+.commentArea .commentTxtArea a.btnOk {display:inline-block; width:120px; height:80px; position:absolute; right:0; top:30px; font-size:14px; color:#fff; line-height:80px; font-weight:bold; text-align:center; background:#000;}
+
+.detailList {margin-top:60px;} 
+.detailList h3 {padding-bottom:20px; font-size:32px; color:#000; text-align:center; font-weight:700;} 

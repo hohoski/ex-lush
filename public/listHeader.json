@@ -1,0 +1,22 @@
+[
+  {
+    "title": "채러티 팟",
+    "subText": "<span style=\"font-size: 18pt;\">총 <b><span style=\"font-size: 18pt;\">797,970,206원</span></b>이 <b> <span style=\"font-size: 18pt;\">54개</span></b>의 단체에 후원되었습니다.</span> <span style=\"font-size: 18pt;\">부가세를 제외한 판매금 100%는 인권, 동물보호, 환경보전에 지속해서 공헌하는</span> <span style=\"font-size: 18pt;\">소규모,비영리 시민 단체를 후원합니다.</span>",
+    "backgroundUrl": "https://www.lush.co.kr/data/skin/front/howling/img/sub/charity_pot_EDIT.jpg"
+  },
+  {
+    "title": "원재료",
+    "subText": "<span>가장 깨끗하고 신선한 과일과 채소, 최상의 에센셜 오일,</span><span>그리고 안전한 원료를 사용하여 효과적인 제품을 만들 수 있다는 것을 믿습니다. </span>",
+    "backgroundUrl": "https://www.lush.co.kr/data/skin/front/howling/img/sub/bg_ingredient.jpg"
+  },
+  {
+    "title": "아티클",
+    "subText": "<span>사회의 다양한 이슈에 관심을 가지며</span><span>러쉬 브랜드와 제품이 가진 올바른 가치를 전합니다.</span>",
+    "backgroundUrl": "https://www.lush.co.kr/data/skin/front/howling/img/sub/bg_article.jpg"
+  },
+  {
+    "title": "젤러쉬",
+    "subText": "<span>동물, 환경, 사람이 조화롭게 살아가는 세상을 위해</span><span>러쉬와 함께 행동하는 젤러쉬의 이야기를 들어보세요.</span>",
+    "backgroundUrl": "https://www.lush.co.kr/data/skin/front/howling/img/sub/bg_JealLUSH.jpg"
+  }
+]

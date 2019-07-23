@@ -1,6 +1,6 @@
 import Vue from "vue"
 import Router from "vue-router"
-import Home from "./views/Home.vue"
+import Home from "@/views/Home.vue"
 
 Vue.use(Router)
 
@@ -14,13 +14,37 @@ export default new Router({
       component: Home
     },
     {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
+      path: "/board",
+      name: "board",
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+        import(/* webpackChunkName: "index" */ "@/views/board/Index.vue"),
+      children: [
+        {
+          path: "list/:contentId",
+          name: "list",
+          component: () =>
+            import(/* webpackChunkName: "list" */ "@/views/board/List.vue")
+        },
+        {
+          path: "form",
+          name: "form",
+          component: () =>
+            import(/* webpackChunkName: "form" */ "@/views/board/Form.vue")
+        },
+        {
+          path: "detail/:seq",
+          name: "detail",
+          component: () =>
+            import(/* webpackChunkName: "detail" */ "@/views/board/Detail.vue")
+        }
+      ]
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })
