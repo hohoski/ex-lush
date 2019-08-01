@@ -4,13 +4,13 @@
     <div class="contBody">
       <search-form />
       <notice-list />
-
+      {{ getBoardList.length }}
       <div class="listTypeB">
         <ul>
-          <li v-for="item in listItems" :key="item.seq">
+          <li v-for="item in getBoardList" :key="item.seq">
             <a href="#" @click.prevent="goDetail(item.seq)">
               <span class="thum"><img :src="item.img" :alt="item.title"/></span>
-              <strong class="txtArea">{{ item.title }}</strong>
+              <strong class="txtArea">{{ item.title }} [{{ item.seq }}]</strong>
             </a>
           </li>
         </ul>
@@ -32,6 +32,7 @@ import ListHeader from "@/components/board/ListHeader.vue"
 import SearchForm from "@/components/board/SearchForm.vue"
 import NoticeList from "@/components/board/Notice.vue"
 import Paging from "@/components/board/Paging.vue"
+import { mapState, mapGetters } from "vuex"
 export default {
   name: "List",
   data() {
@@ -46,20 +47,20 @@ export default {
     NoticeList,
     Paging
   },
+  created() {},
   computed: {
+    ...mapGetters(["getBoardList"]),
+    ...mapState(["BoardList"]),
     contentId() {
       return this.$route.params.contentId
     }
   },
   watch: {
-    contentId() {
+    $route() {
       this.getHeaderInfo()
     }
   },
   mounted() {
-    axios.get("/list.json").then(result => {
-      this.listItems = result.data
-    })
     this.getHeaderInfo()
   },
   methods: {

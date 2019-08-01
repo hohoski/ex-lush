@@ -11,8 +11,8 @@
           <input
             v-model="img"
             type="text"
-            placeholder="이미지 경로를 입력하세요"
-            value="https://t1.daumcdn.net/cfile/tistory/9983F6355C28DD7516"
+            placeholder="이미지 URL을 입력하세요"
+            value="https://miro.medium.com/max/1200/1*vFC8tDUGLlXIiqT7ymf3xg.png"
           />
         </li>
       </ul>
@@ -27,7 +27,7 @@
       >
       <a
         href="#"
-        @click.prevent="complete()"
+        @click.prevent="$router.go(-1)"
         class="btn btnTypeA"
         style="width:200px;"
         >취소</a
@@ -37,17 +37,47 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from "vuex"
 export default {
   name: "Form",
   data() {
+    const seq =
+      this.$route.params.seq !== undefined ? this.$route.params.seq : null
     return {
+      idx: "",
       title: "",
-      img: ""
+      img: "",
+      seq: seq
     }
   },
+  computed: {
+    ...mapState(["boardList"])
+  },
+  mounted() {
+    this.boardList.forEach((element, idx) => {
+      if (element.seq === this.seq) {
+        this.title = element.title
+        this.img = element.img
+        this.idx = idx
+      }
+    })
+  },
   methods: {
+    ...mapMutations(["addBoardList"]),
+    ...mapMutations(["modifyBoardList"]),
     complete() {
-      console.log("abc")
+      let seqNum = 0
+      if (this.seq != null) {
+        seqNum = this.seq
+        this.modifyBoardList({
+          seq: seqNum,
+          title: this.title,
+          img: this.img
+        })
+      } else {
+        seqNum = Number(this.boardList[0].seq) + 1
+        this.addBoardList({ seq: seqNum, title: this.title, img: this.img })
+      }
     }
   }
 }

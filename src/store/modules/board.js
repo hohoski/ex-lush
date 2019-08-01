@@ -1,10 +1,6 @@
-import Vue from "vue"
-import Vuex from "vuex"
-import router from "./router"
+import router from "@/router"
 
-Vue.use(Vuex)
-
-export default new Vuex.Store({
+export default {
   state: {
     productMenus: [],
     boardList: []
@@ -69,6 +65,9 @@ export default new Vuex.Store({
   getters: {
     getProductMenus(state) {
       return state.productMenus
+    },
+    getBoardList(state) {
+      return state.boardList
     }
   }
-})
+}

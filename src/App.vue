@@ -1,31 +1,36 @@
 <template>
   <div id="app">
-    <my-header />
-    <div id="container">
-      <router-view />
-    </div>
-    <my-footer />
+    <default-layout>
+      <div id="container">
+        <router-view />
+      </div>
+    </default-layout>
   </div>
 </template>
 
 <script>
-import MyHeader from "@/components/include/Header.vue"
-import MyFooter from "@/components/include/Footer.vue"
+import DefaultLayout from "@/components/layouts/Default.vue"
+import { mapMutations } from "vuex"
+import axios from "axios"
 
 export default {
   name: "App",
   components: {
-    MyHeader,
-    MyFooter
+    DefaultLayout
   },
-  created() {}
+  created() {
+    axios.get("/list.json").then(result => {
+      this.setBoardList(result.data)
+    })
+    axios.get("/menuProducts.json").then(result => {
+      this.setProductMenus(result.data)
+    })
+  },
+  methods: {
+    ...mapMutations(["setProductMenus"]),
+    ...mapMutations(["setBoardList"])
+  }
 }
 </script>
 
-<style lang="scss">
-@import url("./assets/css/default.scss");
-@import url("./assets/css/fonts.scss");
-@import url("./assets/css/common.scss");
-@import url("./assets/css/layout.scss");
-@import url("./assets/css/content.scss");
-</style>
+<style lang="scss"></style>

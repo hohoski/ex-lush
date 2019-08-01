@@ -26,7 +26,7 @@ export default new Router({
             import(/* webpackChunkName: "list" */ "@/views/board/List.vue")
         },
         {
-          path: "form",
+          path: "form/:seq?",
           name: "form",
           component: () =>
             import(/* webpackChunkName: "form" */ "@/views/board/Form.vue")

@@ -6,154 +6,38 @@
           ><img src="@/assets/images/common/logo.png" alt="LUSH"
         /></router-link>
       </h1>
-      <ul class="utilNav">
-        <li class="gSearch">
-          <a href="#"
-            ><img src="@/assets/images/ico/icon_search.png" alt="SEARCH"
-          /></a>
-        </li>
-        <li class="gCart">
-          <a href="#"
-            ><img src="@/assets/images/ico/icon_cart.png" alt="CART"
-          /></a>
-          <span>0</span>
-        </li>
-        <li class="gMypage">
-          <a href="#"
-            ><img src="@/assets/images/ico/icon_mypage.png" alt="MYPAGE"
-          /></a>
-          <div class="pop_mypage">
-            <ul>
-              <li><a href="#">로그인</a></li>
-              <li><a href="#">회원가입</a></li>
-              <li><a href="#">스카우트</a></li>
-              <li><a href="#">고객센터</a></li>
-            </ul>
-          </div>
-        </li>
-      </ul>
+      <global-utill-nav />
     </div>
-
     <div id="gnb">
       <ul>
         <li>
           <a href="#">PRODUCTS</a>
           <div class="subGnb proSubGnb">
             <ul>
-              <li>
-                <strong><a href="#">러쉬</a></strong>
+              <li
+                v-for="proMenuDepth1 in getProductMenus"
+                :key="proMenuDepth1.name"
+              >
+                <strong
+                  ><a :href="proMenuDepth1.link">{{
+                    proMenuDepth1.name
+                  }}</a></strong
+                >
                 <ul class="subDept2">
-                  <li>
-                    <a href="#">베스트</a>
+                  <li
+                    v-for="proMenuDepth2 in proMenuDepth1.subMenus"
+                    :key="proMenuDepth2.index"
+                  >
+                    <a :href="proMenuDepth2.link">{{ proMenuDepth2.name }}</a>
                     <ul>
-                      <li><a href="#">주간 베스트</a></li>
-                      <li><a href="#">별 다섯개 후기</a></li>
-                      <li><a href="#">기프트 베스트</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">배쓰</a>
-                    <ul>
-                      <li><a href="#">배쓰 밤</a></li>
-                      <li><a href="#">버블 바</a></li>
-                      <li><a href="#">배쓰 오일</a></li>
-                      <li><a href="#">펀</a></li>
-                      <li><a href="#">젤리 밤</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">샤워</a>
-                    <ul>
-                      <li><a href="#">솝</a></li>
-                      <li><a href="#">샤워 젤 &amp; 젤리</a></li>
-                      <li><a href="#">보디 컨디셔너</a></li>
-                      <li><a href="#">샤워 밤</a></li>
-                      <li><a href="#">스크럽 &amp; 버터</a></li>
-                      <li><a href="#">펀</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">보디</a>
-                    <ul>
-                      <li><a href="#">클렌저</a></li>
-                      <li><a href="#">핸드 앤 풋</a></li>
-                      <li><a href="#">로션</a></li>
-                      <li><a href="#">마사지 바</a></li>
-                      <li><a href="#">더스팅 파우더</a></li>
-                      <li><a href="#">쉐이빙 크림</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">페이스</a>
-                    <ul>
-                      <li><a href="#">클렌저</a></li>
-                      <li><a href="#">페이스 마스크</a></li>
-                      <li><a href="#">젤리 마스크</a></li>
-                      <li><a href="#">토너</a></li>
-                      <li><a href="#">모이스춰라이저</a></li>
-                      <li><a href="#">프라이머</a></li>
-                      <li><a href="#">립</a></li>
-                      <li><a href="#">쉐이빙 크림</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">헤어</a>
-                    <ul>
-                      <li><a href="#">샴푸 바</a></li>
-                      <li><a href="#">샴푸</a></li>
-                      <li><a href="#">드라이 샴푸</a></li>
-                      <li><a href="#">컨디셔너</a></li>
-                      <li><a href="#">트리트먼트</a></li>
-                      <li><a href="#">스타일링</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">메이크업</a>
-                    <ul>
-                      <li><a href="#">파운데이션</a></li>
-                      <li><a href="#">블러쉬</a></li>
-                      <li><a href="#">아이즈</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">퍼퓸</a>
-                    <ul>
-                      <li><a href="#">보디 스프레이</a></li>
-                      <li><a href="#">블랙 라벨</a></li>
-                      <li><a href="#">화이트 리퀴드</a></li>
-                      <li><a href="#">화이트 솔리드</a></li>
-                      <li><a href="#">워시 카드</a></li>
-                      <li><a href="#">퍼퓸 낫랩</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">기프트</a>
-                    <ul>
-                      <li><a href="#">1-3만원대</a></li>
-                      <li><a href="#">4-6만원대</a></li>
-                      <li><a href="#">7만원 이상</a></li>
-                      <li><a href="#">낫랩</a></li>
-                      <li><a href="#">스웨그</a></li>
-                      <li><a href="#">악세서리</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">프로모션</a>
-                    <ul>
-                      <li><a href="#">셀러브레이션</a></li>
-                      <li><a href="#">국내제조</a></li>
-                      <li><a href="#">온라인 전용</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <strong><a href="#">LUSH SPA</a></strong>
-                <ul class="subDept2">
-                  <li>
-                    <a href="#">SPA</a>
-                    <ul>
-                      <li><a href="#">TREATMENTS</a></li>
+                      <li
+                        v-for="proMenuDepth3 in proMenuDepth2.menuLists"
+                        :key="proMenuDepth3.index"
+                      >
+                        <a :href="proMenuDepth3.link">{{
+                          proMenuDepth3.name
+                        }}</a>
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -309,8 +193,18 @@
 
 <script>
 import $ from "jquery"
+import { mapGetters } from "vuex"
+import GlobalUtillNav from "@/components/include/GlobalUtillNav"
+
 export default {
   name: "Header",
+  components: {
+    GlobalUtillNav
+  },
+  computed: {
+    //...mapState(["productMenus"])
+    ...mapGetters(["getProductMenus"])
+  },
   mounted() {
     $("#gnb > ul > li > a").on("mouseenter", function() {
       if ($(this).siblings(".subGnb").length > 0) {

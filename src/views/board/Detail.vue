@@ -34,6 +34,8 @@
           </div>
         </div>
         <div class="btnArea">
+          <a href="#" @click.prevent="goModify()">수정</a>
+          <a href="#" @click.prevent="removeBoardList(seq)">삭제</a>
           <a href="#" @click.prevent="goList()">목록</a>
         </div>
       </div>
@@ -243,12 +245,28 @@
 </template>
 
 <script>
+import { mapActions } from "vuex"
 export default {
   name: "Detail",
+  data() {
+    const seq = this.$route.params.seq
+    return {
+      seq: seq
+    }
+  },
   methods: {
     goList() {
       this.$router.go(-1)
-    }
+    },
+    goModify() {
+      this.$router.push({
+        name: "form",
+        params: {
+          seq: this.seq
+        }
+      })
+    },
+    ...mapActions(["removeBoardList"])
   }
 }
 </script>
