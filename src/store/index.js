@@ -8,6 +8,7 @@ const requireModules = require.context("./modules", false, /\.js$/)
 const modules = requireModules.keys().reduce((modules, fileName) => {
   const name = fileName.match(/([^./]+)\.js$/)[1]
   modules[name] = requireModules(fileName).default
+  console.log(modules)
   return modules
 }, {})
 

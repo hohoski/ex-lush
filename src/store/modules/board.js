@@ -2,13 +2,9 @@ import router from "@/router"
 
 export default {
   state: {
-    productMenus: [],
     boardList: []
   },
   mutations: {
-    setProductMenus(state, payLoad) {
-      state.productMenus = payLoad
-    },
     setBoardList(state, payLoad) {
       state.boardList = payLoad
     },
@@ -63,9 +59,6 @@ export default {
     }
   },
   getters: {
-    getProductMenus(state) {
-      return state.productMenus
-    },
     getBoardList(state) {
       return state.boardList
     }
